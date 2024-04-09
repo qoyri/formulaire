@@ -13,6 +13,9 @@ namespace Formulaire
         public ObservableCollection<Personne> Personnes { get; set; }
         private Personne personneEnCours;
 
+        /// <summary>
+        /// Represents the main window of the application
+        /// </summary>
         public MainWindow()
         {
             InitializeComponent();
@@ -24,6 +27,11 @@ namespace Formulaire
             ResetPersonneEnCours();
         }
 
+        /// <summary>
+        /// Event handler for the Add button click event
+        /// </summary>
+        /// <param name="sender">The object that raised the event</param>
+        /// <param name="e">The event arguments</param>
         private void Ajouter_Click(object sender, RoutedEventArgs e)
         {
             // Check that personneEnCours has valid values before adding it to the collection
@@ -52,6 +60,10 @@ namespace Formulaire
             this.DataContext = personneEnCours;
         }
 
+        /// <summary>
+        /// Loads data from a file and populates the Personnes collection with the data.
+        /// </summary>
+        /// <returns>A task representing the asynchronous operation.</returns>
         private async Task LoadDataFromFile()
         {
             var stream = getPath();

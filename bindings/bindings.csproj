@@ -297,6 +297,7 @@
     <EmbeddedResource Include="Resources\save.txt" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="readme.md" />
     <Content Include="save.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
