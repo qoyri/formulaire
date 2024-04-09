@@ -1,0 +1,422 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MaterialDesign-WPF-Expander</name>
+    </assembly>
+    <members>
+        <member name="T:MaterialDesign_WPF_Expander.Converters.BooleanToExpanderIconConverter">
+            <summary>
+            Convert between boolean and expander icon
+            </summary>
+        </member>
+        <member name="M:MaterialDesign_WPF_Expander.Converters.BooleanToExpanderIconConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Convert bool to expander icon
+            </summary>
+            <param name="value">boolean value</param>
+            <param name="targetType">ImageSource</param>
+            <param name="parameter">null</param>
+            <param name="culture">null</param>
+            <returns>Minus icon or Plus icon</returns>
+        </member>
+        <member name="T:MaterialDesign_WPF_Expander.Converters.BooleanToVisibilityConverter">
+            <summary>
+            Convert between boolean and visibility
+            </summary>
+        </member>
+        <member name="M:MaterialDesign_WPF_Expander.Converters.BooleanToVisibilityConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Convert bool to Visibility
+            </summary>
+            <param name="value">boolean value</param>
+            <param name="targetType">Visibility</param>
+            <param name="parameter">null</param>
+            <param name="culture">null</param>
+            <returns>Visible or Hidden</returns>
+        </member>
+        <member name="M:MaterialDesign_WPF_Expander.Converters.BooleanToVisibilityConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Convert Visibility to boolean
+            </summary>
+            <param name="value"></param>
+            <param name="targetType"></param>
+            <param name="parameter"></param>
+            <param name="culture"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MaterialDesign_WPF_Expander.Converters.IsDisabledToOpacityConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Convert is disabled to disabled opacity
+            </summary>
+            <param name="value">boolean value</param>
+            <param name="targetType">Double</param>
+            <param name="parameter">null</param>
+            <param name="culture">null</param>
+            <returns>disabled opacity or normal opacity</returns>
+        </member>
+        <member name="T:MaterialDesign_WPF_Expander.EventArguments.IsOpenedChangedEventArgs">
+            <summary>
+            Event arguments for Expander ui-element,
+            for IsOpenedChanged event.
+            </summary>
+        </member>
+        <member name="P:MaterialDesign_WPF_Expander.EventArguments.IsOpenedChangedEventArgs.IsOpened">
+            <summary>
+            Set or get the expander is opened state
+            from event args.
+            </summary>
+        </member>
+        <member name="T:MaterialDesign_WPF_Expander.Expander">
+            <summary>
+            Base class for <c>Material Design Expander ui-element</c>.
+            <para/>
+            This class contains the basic logic for working
+            with the <c>Expander ui-element</c>.
+            <para/>
+            This class is inherited from the <see cref="T:System.Windows.Controls.Control"/> class.
+            <para/>
+            This <c>Expander ui-element</c> is not affiliated with
+            the official Material Design guidelines!
+            <para/>
+            This ui-element was created in accordance with
+            one of the sites on Google https://domains.google/#/.
+            </summary>
+        </member>
+        <member name="T:MaterialDesign_WPF_Expander.Expander.OpenedDelegate">
+            <summary>
+            Identifies the <see cref="E:MaterialDesign_WPF_Expander.Expander.OpenedEvent"/> event delegate.
+            </summary>
+            <param name="sender">expander ui-element class instance</param>
+            <param name="e">Just empty event arguments</param>
+        </member>
+        <member name="E:MaterialDesign_WPF_Expander.Expander.OpenedEvent">
+            <summary>
+            Occurs when the expander finished the animation and is fully opened.
+            </summary>
+        </member>
+        <member name="T:MaterialDesign_WPF_Expander.Expander.OpenDelegate">
+            <summary>
+            Identifies the <see cref="E:MaterialDesign_WPF_Expander.Expander.OpenEvent"/> event delegate.
+            </summary>
+            <param name="sender">expander ui-element class instance</param>
+            <param name="e">Just empty event arguments</param>
+        </member>
+        <member name="E:MaterialDesign_WPF_Expander.Expander.OpenEvent">
+            <summary>
+            Occurs when the expander starting the animation and starts to open.
+            </summary>
+        </member>
+        <member name="T:MaterialDesign_WPF_Expander.Expander.ClosedDelegate">
+            <summary>
+            Identifies the <see cref="E:MaterialDesign_WPF_Expander.Expander.ClosedEvent"/> event delegate.
+            </summary>
+            <param name="sender">expander ui-element class instance</param>
+            <param name="e">Just empty event arguments</param>
+        </member>
+        <member name="E:MaterialDesign_WPF_Expander.Expander.ClosedEvent">
+            <summary>
+            Occurs when the expander finished the animation and is fully closed.
+            </summary>
+        </member>
+        <member name="T:MaterialDesign_WPF_Expander.Expander.CloseDelegate">
+            <summary>
+            Identifies the <see cref="E:MaterialDesign_WPF_Expander.Expander.CloseEvent"/> event delegate.
+            </summary>
+            <param name="sender">expander ui-element class instance</param>
+            <param name="e">Just empty event arguments</param>
+        </member>
+        <member name="E:MaterialDesign_WPF_Expander.Expander.CloseEvent">
+            <summary>
+            Occurs when the expander starting the animation and starts to close.
+            </summary>
+        </member>
+        <member name="T:MaterialDesign_WPF_Expander.Expander.IsOpenedChangedDelegate">
+            <summary>
+            Identifies the <see cref="E:MaterialDesign_WPF_Expander.Expander.IsOpenedChangedEvent"/> event delegate.
+            </summary>
+            <param name="sender">expander ui-element class instance</param>
+            <param name="e">Just empty event arguments</param>
+        </member>
+        <member name="E:MaterialDesign_WPF_Expander.Expander.IsOpenedChangedEvent">
+            <summary>
+            Occurs when the expander <see cref="P:MaterialDesign_WPF_Expander.Expander.IsOpened"/> value changed.
+            </summary>
+        </member>
+        <member name="P:MaterialDesign_WPF_Expander.Expander.Content">
+            <summary>
+            Set or get the content object that was set in the
+            tags of the Expander ui-element.
+            
+            <para>Designer Category: <c>Common</c>.</para>
+            </summary>
+        </member>
+        <member name="F:MaterialDesign_WPF_Expander.Expander.ContentProperty">
+            <summary>
+            Identifies the <see cref="P:MaterialDesign_WPF_Expander.Expander.Content"/> dependency property.
+            </summary>
+        </member>
+        <member name="P:MaterialDesign_WPF_Expander.Expander.Title">
+            <summary>
+            Set or get the expander title text that was set in
+            the Expander ui-element.
+            
+            <para>Designer Category: <c>Common</c>.</para>
+            </summary>
+        </member>
+        <member name="F:MaterialDesign_WPF_Expander.Expander.TitleProperty">
+            <summary>
+            Identifies the <see cref="P:MaterialDesign_WPF_Expander.Expander.Title"/> dependency property.
+            </summary>
+        </member>
+        <member name="P:MaterialDesign_WPF_Expander.Expander.IconIsVisible">
+            <summary>
+            Set or get the expander icon visibility that was set in
+            the Expander ui-element.
+            
+            <para>Designer Category: <c>Appearance</c>.</para>
+            </summary>
+        </member>
+        <member name="F:MaterialDesign_WPF_Expander.Expander.IconIsVisibleProperty">
+            <summary>
+            Identifies the <see cref="P:MaterialDesign_WPF_Expander.Expander.IconIsVisible"/> dependency property.
+            </summary>
+        </member>
+        <member name="P:MaterialDesign_WPF_Expander.Expander.HeaderHorizontalAlignment">
+            <summary>
+            Set or get the expander title horizontal alignment
+            that was set in the Expander ui-element.
+            
+            <para>Designer Category: <c>Layout</c>.</para>
+            </summary>
+        </member>
+        <member name="F:MaterialDesign_WPF_Expander.Expander.HeaderHorizontalAlignmentProperty">
+            <summary>
+            Identifies the <see cref="P:MaterialDesign_WPF_Expander.Expander.HeaderHorizontalAlignment"/> dependency property.
+            </summary>
+        </member>
+        <member name="P:MaterialDesign_WPF_Expander.Expander.IsOpened">
+            <summary>
+            Set or get the expander is opened state
+            that was set in the Expander ui-element.
+            
+            <para>Designer Category: <c>Common</c>.</para>
+            </summary>
+        </member>
+        <member name="F:MaterialDesign_WPF_Expander.Expander.IsOpenedProperty">
+            <summary>
+            Identifies the <see cref="P:MaterialDesign_WPF_Expander.Expander.IsOpened"/> dependency property.
+            </summary>
+        </member>
+        <member name="P:MaterialDesign_WPF_Expander.Expander.HeaderFontFamily">
+            <summary>
+            Set or get the expander header font family
+            that was set in the Expander ui-element.
+            
+            <para>Designer Category: <c>Text Appearance</c>.</para>
+            </summary>
+        </member>
+        <member name="F:MaterialDesign_WPF_Expander.Expander.HeaderFontFamilyProperty">
+            <summary>
+            Identifies the <see cref="P:MaterialDesign_WPF_Expander.Expander.HeaderFontFamily"/> dependency property.
+            </summary>
+        </member>
+        <member name="P:MaterialDesign_WPF_Expander.Expander.HeaderFontSize">
+            <summary>
+            Set or get the expander header font size
+            that was set in the Expander ui-element.
+            
+            <para>Designer Category: <c>Text Appearance</c>.</para>
+            </summary>
+        </member>
+        <member name="F:MaterialDesign_WPF_Expander.Expander.HeaderFontSizeProperty">
+            <summary>
+            Identifies the <see cref="P:MaterialDesign_WPF_Expander.Expander.HeaderFontSize"/> dependency property.
+            </summary>
+        </member>
+        <member name="P:MaterialDesign_WPF_Expander.Expander.HeaderFontStretch">
+            <summary>
+            Set or get the expander header font stretch
+            that was set in the Expander ui-element.
+            
+            <para>Designer Category: <c>Text Appearance</c>.</para>
+            </summary>
+        </member>
+        <member name="F:MaterialDesign_WPF_Expander.Expander.HeaderFontStretchProperty">
+            <summary>
+            Identifies the <see cref="P:MaterialDesign_WPF_Expander.Expander.HeaderFontStretch"/> dependency property.
+            </summary>
+        </member>
+        <member name="P:MaterialDesign_WPF_Expander.Expander.HeaderFontStyle">
+            <summary>
+            Set or get the expander header font style
+            that was set in the Expander ui-element.
+            
+            <para>Designer Category: <c>Text Appearance</c>.</para>
+            </summary>
+        </member>
+        <member name="F:MaterialDesign_WPF_Expander.Expander.HeaderFontStyleProperty">
+            <summary>
+            Identifies the <see cref="P:MaterialDesign_WPF_Expander.Expander.HeaderFontStyle"/> dependency property.
+            </summary>
+        </member>
+        <member name="P:MaterialDesign_WPF_Expander.Expander.HeaderFontWeight">
+            <summary>
+            Set or get the expander header font weight
+            that was set in the Expander ui-element.
+            
+            <para>Designer Category: <c>Text Appearance</c>.</para>
+            </summary>
+        </member>
+        <member name="F:MaterialDesign_WPF_Expander.Expander.HeaderFontWeightProperty">
+            <summary>
+            Identifies the <see cref="P:MaterialDesign_WPF_Expander.Expander.HeaderFontWeight"/> dependency property.
+            </summary>
+        </member>
+        <member name="P:MaterialDesign_WPF_Expander.Expander.CornerRadius">
+            <summary>
+            Set or get the expander border corner radius
+            that was set in the Expander ui-element.
+            
+            <para>Designer Category: <c>Appearance</c>.</para>
+            </summary>
+        </member>
+        <member name="F:MaterialDesign_WPF_Expander.Expander.CornerRadiusProperty">
+            <summary>
+            Identifies the <see cref="P:MaterialDesign_WPF_Expander.Expander.CornerRadius"/> dependency property.
+            </summary>
+        </member>
+        <member name="P:MaterialDesign_WPF_Expander.Expander.AnimationDuration">
+            <summary>
+            Set or get the expander opening \ closing animation
+            duration that was set in the Expander ui-element.
+            
+            <para>Designer Category: <c>Appearance</c>.</para>
+            </summary>
+        </member>
+        <member name="F:MaterialDesign_WPF_Expander.Expander.AnimationDurationProperty">
+            <summary>
+            Identifies the <see cref="P:MaterialDesign_WPF_Expander.Expander.AnimationDuration"/> dependency property.
+            </summary>
+        </member>
+        <member name="P:MaterialDesign_WPF_Expander.Expander.IconZoom">
+            <summary>
+            Set or get the expander header icon zoom
+            that was set in the Expander ui-element.
+            
+            <para>Designer Category: <c>Appearance</c>.</para>
+            </summary>
+        </member>
+        <member name="F:MaterialDesign_WPF_Expander.Expander.IconZoomProperty">
+            <summary>
+            Identifies the <see cref="P:MaterialDesign_WPF_Expander.Expander.IconZoom"/> dependency property.
+            </summary>
+        </member>
+        <member name="P:MaterialDesign_WPF_Expander.Expander.Background">
+            <summary>
+            Set or get the expander background color
+            for the Expander ui-element.
+            
+            <para>Designer Category: <c>Brush</c>.</para>
+            </summary>
+        </member>
+        <member name="F:MaterialDesign_WPF_Expander.Expander.BackgroundProperty">
+            <summary>
+            Identifies the <see cref="P:MaterialDesign_WPF_Expander.Expander.Background"/> dependency property.
+            </summary>
+        </member>
+        <member name="P:MaterialDesign_WPF_Expander.Expander.Foreground">
+            <summary>
+            Set or get the expander header foreground color
+            for the Expander ui-element.
+            
+            <para>Designer Category: <c>Brush</c>.</para>
+            </summary>
+        </member>
+        <member name="F:MaterialDesign_WPF_Expander.Expander.ForegroundProperty">
+            <summary>
+            Identifies the <see cref="P:MaterialDesign_WPF_Expander.Expander.Foreground"/> dependency property.
+            </summary>
+        </member>
+        <member name="P:MaterialDesign_WPF_Expander.Expander.HoverForeground">
+            <summary>
+            Set or get the expander header hover foreground color
+            for the Expander ui-element.
+            
+            <para>Designer Category: <c>Brush</c>.</para>
+            </summary>
+        </member>
+        <member name="F:MaterialDesign_WPF_Expander.Expander.HoverForegroundProperty">
+            <summary>
+            Identifies the <see cref="P:MaterialDesign_WPF_Expander.Expander.HoverForeground"/> dependency property.
+            </summary>
+        </member>
+        <member name="P:MaterialDesign_WPF_Expander.Expander.BorderBrush">
+            <summary>
+            Set or get the expander border color
+            for the Expander ui-element.
+            
+            <para>Designer Category: <c>Brush</c>.</para>
+            </summary>
+        </member>
+        <member name="F:MaterialDesign_WPF_Expander.Expander.BorderBrushProperty">
+            <summary>
+            Identifies the <see cref="P:MaterialDesign_WPF_Expander.Expander.BorderBrush"/> dependency property.
+            </summary>
+        </member>
+        <member name="M:MaterialDesign_WPF_Expander.Expander.OnApplyTemplate">
+            <summary>
+            This overridden method assign the used ui elements
+            for work Expander-ui element.
+            <para/>
+            Also this overridden method initializes some parameters
+            after loading the composite ui-elements of the Expander.
+            </summary>
+        </member>
+        <member name="T:MaterialDesign_WPF_Expander.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:MaterialDesign_WPF_Expander.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:MaterialDesign_WPF_Expander.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="T:XamlGeneratedNamespace.GeneratedInternalTypeHelper">
+            <summary>
+            GeneratedInternalTypeHelper
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.CreateInstance(System.Type,System.Globalization.CultureInfo)">
+            <summary>
+            CreateInstance
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.GetPropertyValue(System.Reflection.PropertyInfo,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            GetPropertyValue
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.SetPropertyValue(System.Reflection.PropertyInfo,System.Object,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            SetPropertyValue
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.CreateDelegate(System.Type,System.Object,System.String)">
+            <summary>
+            CreateDelegate
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.AddEventHandler(System.Reflection.EventInfo,System.Object,System.Delegate)">
+            <summary>
+            AddEventHandler
+            </summary>
+        </member>
+    </members>
+</doc>
