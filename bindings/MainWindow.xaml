@@ -1,43 +1,74 @@
-﻿<Window x:Class="Formulaire.MainWindow"
-                                 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                                 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                                 Title="Formulaire et DataGrid" Height="450" Width="800">
-                             <Grid Margin="10">
-                                 <Grid.ColumnDefinitions>
-                                     <ColumnDefinition Width="*"/>
-                                     <ColumnDefinition Width="2*"/>
-                                 </Grid.ColumnDefinitions>
-                         
-                                 <!-- Formulaire -->
-                                 <StackPanel Grid.Column="0" Width="250" HorizontalAlignment="Left">
-                                     <Label>Prénom</Label>
-                                     <TextBox x:Name="textBoxPrenom" Text="{Binding Prenom, UpdateSourceTrigger=PropertyChanged}" />
-                                     <Label>Nom</Label>
-                                     <TextBox x:Name="textBoxNom" Text="{Binding Nom, UpdateSourceTrigger=PropertyChanged}" />
-                                     <Label>Naissance</Label>
-                                     <!-- Corrigé le x:Name pour la naissance -->
-                                     <TextBox x:Name="textBoxNaissance" Text="{Binding Naissance, UpdateSourceTrigger=PropertyChanged}" />
-                                     <Label>Promo</Label>
-                                     <TextBox x:Name="textBoxPromo" Text="{Binding Promo, UpdateSourceTrigger=PropertyChanged}" />
-                                     <Button Content="Ajouter" Click="Ajouter_Click"/>
-                                 </StackPanel>
-                         
-                                 <!-- DataGrid -->
-                                 <DataGrid x:Name="datagridInfos" Grid.Column="1" AutoGenerateColumns="False" CanUserAddRows="False" Margin="10">
-                                     <DataGrid.Columns>
-                                         <DataGridTextColumn Header="Prénom" Binding="{Binding Prenom}"/>
-                                         <DataGridTextColumn Header="Nom" Binding="{Binding Nom}"/>
-                                         <DataGridTextColumn Header="Naissance" Binding="{Binding Naissance}"/>
-                                         <DataGridTextColumn Header="Promo" Binding="{Binding Promo}"/>
-                                         <!-- Ajouter le bouton Delete ici -->
-                                         <DataGridTemplateColumn Header="            ">
-                                             <DataGridTemplateColumn.CellTemplate>
-                                                 <DataTemplate>
-                                                     <Button Content="Delete" Click="DeleteButton_Click" Background="Red" />
-                                                 </DataTemplate>
-                                             </DataGridTemplateColumn.CellTemplate>
-                                         </DataGridTemplateColumn>
-                                     </DataGrid.Columns>
-                                 </DataGrid>
-                             </Grid>
-                         </Window>
+﻿<Metro:MetroWindow x:Class="Formulaire.MainWindow"
+                   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                   xmlns:Metro="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+                   xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+                   TitleForeground="Black"
+                   Background="White"
+                   GlowColor="{DynamicResource AccentColorBrush}"
+                   Title="Formulaire et DataGrid" Height="450" Width="800">
+    
+    <Grid Margin="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+        
+        <!-- Formulaire -->
+        <StackPanel Grid.Column="0" Width="250" HorizontalAlignment="Left" DataContext="{Binding PersonneEnCours}">
+            <Label>Prénom</Label>
+            <TextBox x:Name="textBoxPrenom" Text="{Binding Prenom, UpdateSourceTrigger=PropertyChanged}" Metro:TextBoxHelper.Watermark="Prénom"/>
+            <Label>Nom</Label>
+            <TextBox x:Name="textBoxNom" Text="{Binding Nom, UpdateSourceTrigger=PropertyChanged}" Metro:TextBoxHelper.Watermark="Nom"/>
+            <Label>Naissance</Label>
+            <TextBox x:Name="textBoxNaissance" Text="{Binding Naissance, UpdateSourceTrigger=PropertyChanged}" Metro:TextBoxHelper.Watermark="Naissance"/>
+            <Label>Promo</Label>
+            <TextBox x:Name="textBoxPromo" Text="{Binding Promo, UpdateSourceTrigger=PropertyChanged}" Metro:TextBoxHelper.Watermark="Promo"/>
+            <Label>Genre</Label>
+            <ComboBox x:Name="comboBoxGenre" Width="225" Text="{Binding Genre}">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <iconPacks:PackIconFontAwesome Kind="{Binding Icon}" Margin="4,0,4,0"/>
+                            <TextBlock Text="{Binding Name}" Margin="4,0,0,0"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+            <Button Content="Ajouter" Command="{Binding Path=DataContext.AddPersonCommand, ElementName=datagridInfos}" Background="#007EFF" Margin="0,15,0,0">                
+                <Button.ContentTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <iconPacks:PackIconMaterial Kind="AccountPlus" VerticalAlignment="Center"/>
+                            <TextBlock Text="Ajouter" VerticalAlignment="Center" Margin="5,0,0,0"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </Button.ContentTemplate>
+            </Button>
+        </StackPanel>
+                                                                 
+        <!-- DataGrid -->
+        <DataGrid x:Name="datagridInfos" ItemsSource="{Binding Personnes}" Grid.Column="1" AutoGenerateColumns="False" CanUserAddRows="False" Margin="10">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Prénom" Binding="{Binding Prenom}"/>
+                <DataGridTextColumn Header="Nom" Binding="{Binding Nom}"/>
+                <DataGridTextColumn Header="Naissance" Binding="{Binding Naissance}"/>
+                <DataGridTextColumn Header="Genre" Binding="{Binding Genre}" />
+                <DataGridTextColumn Header="Promo" Binding="{Binding Promo}"/>
+                <!-- Ajouter le bouton Delete ici -->
+                <DataGridTemplateColumn Header=" ">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Command="{Binding Path=DataContext.DeletePersonCommand, ElementName=datagridInfos}"
+                                    CommandParameter="{Binding}"
+                                    Background="Red">
+                                <!-- Your Icon Here -->
+                                <iconPacks:PackIconModern Kind="Delete" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Metro:MetroWindow>

@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("save.txt")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("readme.md")]
 
 

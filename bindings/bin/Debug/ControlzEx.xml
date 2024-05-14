@@ -1848,6 +1848,14 @@
             Sets the vertical offset for the relative placement of the Tooltip.
             </summary>
         </member>
+        <member name="M:ControlzEx.WindowChromeWindow.OnSourceInitialized(System.EventArgs)">
+            <inheritdoc />
+        </member>
+        <member name="M:ControlzEx.WindowChromeWindow.InitializeBehaviors">
+            <summary>
+            Used to initialize the required behaviors.
+            </summary>
+        </member>
         <member name="M:ControlzEx.WindowChromeWindow.InitializeWindowChromeBehavior">
             <summary>
             Initializes the WindowChromeBehavior which is needed to render the custom WindowChrome.
@@ -1858,56 +1866,109 @@
             Initializes the WindowChromeBehavior which is needed to render the custom WindowChrome.
             </summary>
         </member>
+        <member name="P:ControlzEx.WindowChromeWindow.ResizeBorderThickness">
+            <inheritdoc cref="P:ControlzEx.Behaviors.WindowChromeBehavior.ResizeBorderThickness"/>
+        </member>
+        <member name="F:ControlzEx.WindowChromeWindow.ResizeBorderThicknessProperty">
+            <summary>Identifies the <see cref="P:ControlzEx.WindowChromeWindow.ResizeBorderThickness"/> dependency property.</summary>
+        </member>
+        <member name="P:ControlzEx.WindowChromeWindow.GlowDepth">
+            <inheritdoc cref="P:ControlzEx.Behaviors.GlowWindowBehavior.GlowDepth"/>
+            <remarks>
+            Only relevant if the DWM border is not used.
+            </remarks>
+        </member>
+        <member name="F:ControlzEx.WindowChromeWindow.GlowDepthProperty">
+            <summary>Identifies the <see cref="P:ControlzEx.WindowChromeWindow.GlowDepth"/> dependency property.</summary>
+        </member>
+        <member name="F:ControlzEx.WindowChromeWindow.UseRadialGradientForCornersProperty">
+            <summary>Identifies the <see cref="P:ControlzEx.WindowChromeWindow.UseRadialGradientForCorners"/> dependency property.</summary>
+        </member>
+        <member name="P:ControlzEx.WindowChromeWindow.UseRadialGradientForCorners">
+            <inheritdoc cref="P:ControlzEx.Behaviors.GlowWindowBehavior.UseRadialGradientForCorners"/>
+            <remarks>
+            Only relevant if the DWM border is not used.
+            </remarks>
+        </member>
+        <member name="F:ControlzEx.WindowChromeWindow.IsGlowTransitionEnabledProperty">
+            <summary>Identifies the <see cref="P:ControlzEx.WindowChromeWindow.IsGlowTransitionEnabled"/> dependency property.</summary>
+        </member>
+        <member name="P:ControlzEx.WindowChromeWindow.IsGlowTransitionEnabled">
+            <inheritdoc cref="P:ControlzEx.Behaviors.GlowWindowBehavior.IsGlowTransitionEnabled"/>
+            <remarks>
+            Only relevant if the DWM border is not used.
+            </remarks>
+        </member>
+        <member name="F:ControlzEx.WindowChromeWindow.IgnoreTaskbarOnMaximizeProperty">
+            <summary>Identifies the <see cref="P:ControlzEx.WindowChromeWindow.IgnoreTaskbarOnMaximize"/> dependency property.</summary>
+        </member>
+        <member name="P:ControlzEx.WindowChromeWindow.IgnoreTaskbarOnMaximize">
+            <inheritdoc cref="P:ControlzEx.Behaviors.WindowChromeBehavior.IgnoreTaskbarOnMaximize"/>
+        </member>
         <member name="P:ControlzEx.WindowChromeWindow.KeepBorderOnMaximize">
-            <summary>
-            Gets/sets if the border thickness value should be kept on maximize
-            if the MaxHeight/MaxWidth of the window is less than the monitor resolution.
-            </summary>
+            <inheritdoc cref="P:ControlzEx.Behaviors.WindowChromeBehavior.KeepBorderOnMaximize"/>
         </member>
         <member name="F:ControlzEx.WindowChromeWindow.KeepBorderOnMaximizeProperty">
-            <summary>
-            <see cref="T:System.Windows.DependencyProperty"/> for <see cref="P:ControlzEx.WindowChromeWindow.KeepBorderOnMaximize"/>.
-            </summary>
+            <summary>Identifies the <see cref="P:ControlzEx.WindowChromeWindow.KeepBorderOnMaximize"/> dependency property.</summary>
+        </member>
+        <member name="F:ControlzEx.WindowChromeWindow.ShowMinButtonProperty">
+            <summary>Identifies the <see cref="P:ControlzEx.WindowChromeWindow.ShowMinButton"/> dependency property.</summary>
         </member>
         <member name="P:ControlzEx.WindowChromeWindow.ShowMinButton">
-            <summary>
-            Gets or sets whether if the minimize button is visible.
-            </summary>
+            <inheritdoc cref="P:ControlzEx.Behaviors.WindowChromeBehavior.EnableMinimize"/>
+        </member>
+        <member name="F:ControlzEx.WindowChromeWindow.ShowMaxRestoreButtonProperty">
+            <summary>Identifies the <see cref="P:ControlzEx.WindowChromeWindow.ShowMaxRestoreButton"/> dependency property.</summary>
         </member>
         <member name="P:ControlzEx.WindowChromeWindow.ShowMaxRestoreButton">
-            <summary>
-            Gets or sets whether if the Maximize/Restore button is visible.
-            </summary>
+            <inheritdoc cref="P:ControlzEx.Behaviors.WindowChromeBehavior.EnableMaxRestore"/>
         </member>
         <member name="F:ControlzEx.WindowChromeWindow.GlowColorProperty">
-            <summary>
-            <see cref="T:System.Windows.DependencyProperty"/> for <see cref="P:ControlzEx.WindowChromeWindow.GlowColor"/>.
-            </summary>
+            <summary>Identifies the <see cref="P:ControlzEx.WindowChromeWindow.GlowColor"/> dependency property.</summary>
         </member>
         <member name="P:ControlzEx.WindowChromeWindow.GlowColor">
-            <summary>
-            Gets or sets a brush which is used as the glow when the window is active.
-            </summary>
+            <inheritdoc cref="P:ControlzEx.Behaviors.GlowWindowBehavior.GlowColor"/>
         </member>
         <member name="F:ControlzEx.WindowChromeWindow.NonActiveGlowColorProperty">
-            <summary>
-            <see cref="T:System.Windows.DependencyProperty"/> for <see cref="P:ControlzEx.WindowChromeWindow.NonActiveGlowColor"/>.
-            </summary>
+            <summary>Identifies the <see cref="P:ControlzEx.WindowChromeWindow.NonActiveGlowColor"/> dependency property.</summary>
         </member>
         <member name="P:ControlzEx.WindowChromeWindow.NonActiveGlowColor">
-            <summary>
-            Gets or sets a brush which is used as the glow when the window is not active.
-            </summary>
+            <inheritdoc cref="P:ControlzEx.Behaviors.GlowWindowBehavior.NonActiveGlowColor"/>
         </member>
         <member name="F:ControlzEx.WindowChromeWindow.IsNCActiveProperty">
-            <summary>
-            <see cref="T:System.Windows.DependencyProperty"/> for <see cref="P:ControlzEx.WindowChromeWindow.IsNCActive"/>.
-            </summary>
+            <summary>Identifies the <see cref="P:ControlzEx.WindowChromeWindow.IsNCActive"/> dependency property.</summary>
         </member>
         <member name="P:ControlzEx.WindowChromeWindow.IsNCActive">
             <summary>
             Gets whether the non-client area is active or not.
             </summary>
+        </member>
+        <member name="F:ControlzEx.WindowChromeWindow.NCActiveBrushProperty">
+            <summary>Identifies the <see cref="P:ControlzEx.WindowChromeWindow.NCActiveBrush"/> dependency property.</summary>
+        </member>
+        <member name="P:ControlzEx.WindowChromeWindow.NCActiveBrush">
+            <summary>
+            Defines the brush to use when the non-client area is active.
+            </summary>
+        </member>
+        <member name="F:ControlzEx.WindowChromeWindow.NCNonActiveBrushProperty">
+            <summary>Identifies the <see cref="P:ControlzEx.WindowChromeWindow.NCNonActiveBrush"/> dependency property.</summary>
+        </member>
+        <member name="P:ControlzEx.WindowChromeWindow.NCNonActiveBrush">
+            <summary>
+            Defines the brush to use when the non-client area is not active.
+            </summary>
+        </member>
+        <member name="F:ControlzEx.WindowChromeWindow.NCCurrentBrushProperty">
+            <summary>Identifies the <see cref="P:ControlzEx.WindowChromeWindow.NCCurrentBrush"/> dependency property.</summary>
+        </member>
+        <member name="P:ControlzEx.WindowChromeWindow.NCCurrentBrush">
+            <summary>
+            Defines the current non-client area brush (active or inactive).
+            </summary>
+            <remarks>
+            This property should only be set through style triggers.
+            </remarks>
         </member>
         <member name="F:ControlzEx.WindowChromeWindow.PreferDWMBorderColorProperty">
             <summary>Identifies the <see cref="P:ControlzEx.WindowChromeWindow.PreferDWMBorderColor"/> dependency property.</summary>
@@ -1916,12 +1977,30 @@
             <inheritdoc cref="P:ControlzEx.Behaviors.GlowWindowBehavior.PreferDWMBorderColor"/>
         </member>
         <member name="F:ControlzEx.WindowChromeWindow.DWMSupportsBorderColorProperty">
-            <summary>
-            <see cref="T:System.Windows.DependencyProperty"/> for <see cref="P:ControlzEx.WindowChromeWindow.DWMSupportsBorderColor"/>.
-            </summary>
+            <summary>Identifies the <see cref="P:ControlzEx.WindowChromeWindow.DWMSupportsBorderColor"/> dependency property.</summary>
         </member>
         <member name="P:ControlzEx.WindowChromeWindow.DWMSupportsBorderColor">
             <inheritdoc cref="P:ControlzEx.Behaviors.GlowWindowBehavior.DWMSupportsBorderColor"/>
+        </member>
+        <member name="F:ControlzEx.WindowChromeWindow.CornerPreferenceProperty">
+            <summary>Identifies the <see cref="P:ControlzEx.WindowChromeWindow.CornerPreference"/> dependency property.</summary>
+        </member>
+        <member name="P:ControlzEx.WindowChromeWindow.CornerPreference">
+            <inheritdoc cref="P:ControlzEx.Behaviors.WindowChromeBehavior.CornerPreference"/>
+        </member>
+        <member name="M:ControlzEx.WindowChromeWindow.OnActivated(System.EventArgs)">
+            <inheritdoc />
+        </member>
+        <member name="M:ControlzEx.WindowChromeWindow.OnDeactivated(System.EventArgs)">
+            <inheritdoc />
+        </member>
+        <member name="M:ControlzEx.WindowChromeWindow.OnStateChanged(System.EventArgs)">
+            <inheritdoc />
+        </member>
+        <member name="M:ControlzEx.WindowChromeWindow.UpdatePadding">
+            <summary>
+            Updates the padding used for the window content.
+            </summary>
         </member>
         <member name="M:ControlzEx.WindowChromeWindow.HandleERASEBKGND(Windows.Win32.WM,System.UIntPtr,System.IntPtr,System.Boolean@)">
             <SecurityNote>

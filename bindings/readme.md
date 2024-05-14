@@ -1,6 +1,19 @@
 # Formulaire
 
-C'est une base de projet WPF (Windows Presentation Foundation) utilisant le .NET Framework.
+C'est une application de formulaire WPF (Windows Presentation Foundation) avec une interface utilisateur personnalisée et une base de données en temps réel représentée par une collection de personnes.
+
+## Technologies utilisées
+
+- .NET Framework
+- WPF pour l'interface utilisateur
+- Rattachement des données et ICommand pour la logique de l'interface utilisateur
+- MahApps.Metro pour les composants de l'interface utilisateur
+
+## Fonctionnalités
+
+- Ajouter une nouvelle personne avec l'option de sélectionner le genre grâce à une ComboBox
+- Afficher toutes les personnes ajoutées avec une correspondance en temps réel entre les données et la vue
+- Supprimer une personne existante
 
 ## Aperçu
 

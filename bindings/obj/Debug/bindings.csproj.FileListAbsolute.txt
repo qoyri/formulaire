@@ -170,3 +170,8 @@ D:\code\source\repos\bindings\bindings\obj\Debug\bindings.pdb
 D:\code\source\repos\bindings\bindings\obj\Debug\bindings_MarkupCompile.lref
 D:\code\source\repos\bindings\bindings\obj\Debug\App.baml
 D:\code\source\repos\bindings\bindings\obj\Debug\bindings_Content.g.cs
+D:\code\source\repos\bindings\bindings\bin\Debug\MahApps.Metro.dll
+D:\code\source\repos\bindings\bindings\bin\Debug\MahApps.Metro.xml
+D:\code\source\repos\bindings\bindings\bin\Debug\de\MahApps.Metro.resources.dll
+D:\code\source\repos\bindings\bindings\bin\Debug\CommonWin32.dll
+D:\code\source\repos\bindings\bindings\bin\Debug\CommonWin32.xml
